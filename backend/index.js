@@ -1,6 +1,6 @@
 import express from "express"
 import Jwt from "jsonwebtoken"
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client/edge'
 const prisma = new PrismaClient()
 
 const app = express();
