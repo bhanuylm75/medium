@@ -190,12 +190,12 @@ app.delete("/api/delete/:id", async (req, res) => {
 
 
 const __dirname = path.dirname("")
-const buildPath = path.join(__dirname  , "../frontend/dist");
+const buildPath = path.join(__dirname  , "./frontend/dist");
 
 app.use(express.static(buildPath))
 app.get("*", (req, res) => {
     try{
-      res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+      res.sendFile(path.resolve(__dirname, "./frontend/dist/index.html"));
     }
     catch(e){
       console.log(e)
