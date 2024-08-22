@@ -16,7 +16,7 @@ const Fullblog = ({ blog }: {blog: any}) => {
     const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(false);
       const handledelete = async () => {
-        const res=await axios.delete(`http://localhost:3008/api/delete/${blog?.id}`)
+        const res=await axios.delete(`http://localhost:3009/api/delete/${blog?.id}`)
         console.log(res)
         if(res.status===200){
           navigate("/blogs")

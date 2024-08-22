@@ -25,7 +25,7 @@ const Blog = () => {
   const [blog,setblog]=useState<Blog | undefined>(undefined);
   const getblog= async()=>{
    try{
-    const response=await axios.get(`http://localhost:3008/api/singleblog/${id}`)
+    const response=await axios.get(`http://localhost:3009/api/singleblog/${id}`)
     console.log(response?.data)
     setblog(response?.data)
    }

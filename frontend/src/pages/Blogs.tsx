@@ -15,7 +15,7 @@ const Blogs = () => {
   const [blogs ,setblogs]=useState([]);
   const allblogs= async ()=>{
     try{
-      const response=await axios.get("http://localhost:3008/api/getallblogs")
+      const response=await axios.get("http://localhost:3009/api/getallblogs")
     console.log(response)
     const data=response?.data?.blogs
     setblogs(data)

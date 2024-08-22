@@ -18,7 +18,7 @@ const Edit = ({ blog }: {blog: Blog}) => {
   const save= async()=>{
     console.log(title,description)
     try{
-      const res=await axios.put("http://localhost:3008/api/updateblog/",{id:blog?.id,title:title,description:description})
+      const res=await axios.put("http://localhost:3009/api/updateblog/",{id:blog?.id,title:title,description:description})
       console.log(res)
       if (res?.status==200){
         console.log("bb")

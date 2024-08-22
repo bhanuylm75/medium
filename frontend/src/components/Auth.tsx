@@ -1,21 +1,24 @@
 import { ChangeEvent, useState } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 const Auth = () => {
   const [postinputs,setpostinputs]=useState({"name":"","email": "",
   "password": ""})
+  const navigate = useNavigate();
 
 
   async function sendRequest() {
     console.log(postinputs)
     try {
-        const response = await axios.post("http://localhost:3008/api/signup", postinputs);
+        const response = await axios.post("http://localhost:3009/api/signup", postinputs);
+        console.log(response)
         const data = response?.data;
         console.log(data)
         if(response.status===200){
           console.log("bdb")
           localStorage.setItem("token", data?.token);
           localStorage.setItem("userid", data?.userid);
+          navigate("/blogs",{replace:true});
   
         }
     } catch(e) {

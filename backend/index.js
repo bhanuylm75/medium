@@ -1,6 +1,6 @@
 import express from "express"
 import Jwt from "jsonwebtoken"
-import { PrismaClient } from '@prisma/client/edge'
+import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const app = express();
@@ -189,25 +189,11 @@ app.delete("/api/delete/:id", async (req, res) => {
 });
 
 
-const __dirname = path.dirname("")
-const buildPath = path.join(__dirname  , "./frontend/dist");
-
-app.use(express.static(buildPath))
-app.get("*", (req, res) => {
-    try{
-      res.sendFile(path.resolve(__dirname, "./frontend/dist/index.html"));
-    }
-    catch(e){
-      console.log(e)
-    }
-});
 
 
 
 
-
-
-app.listen(3008,()=>{
+app.listen(3009,()=>{
   console.log("server started")
 })
 
